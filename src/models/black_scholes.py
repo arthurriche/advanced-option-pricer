@@ -14,7 +14,7 @@ from typing import Dict, Union, Optional
 import warnings
 
 
-class BlackScholesPricer:
+class BlackScholesModel:
     """
     Black-Scholes-Merton option pricing model implementation.
     
@@ -23,7 +23,7 @@ class BlackScholesPricer:
     """
     
     def __init__(self):
-        """Initialize the Black-Scholes pricer."""
+        """Initialize the Black-Scholes model."""
         pass
     
     def _d1_d2(self, S: float, K: float, T: float, r: float, sigma: float) -> tuple:
@@ -322,20 +322,20 @@ class BlackScholesPricer:
 # Convenience functions
 def black_scholes_call(S: float, K: float, T: float, r: float, sigma: float) -> float:
     """Convenience function for pricing call options."""
-    pricer = BlackScholesPricer()
+    pricer = BlackScholesModel()
     return pricer.price_call(S, K, T, r, sigma)
 
 
 def black_scholes_put(S: float, K: float, T: float, r: float, sigma: float) -> float:
     """Convenience function for pricing put options."""
-    pricer = BlackScholesPricer()
+    pricer = BlackScholesModel()
     return pricer.price_put(S, K, T, r, sigma)
 
 
 def calculate_greeks(S: float, K: float, T: float, r: float, sigma: float, 
                      option_type: str = 'call') -> Dict[str, float]:
     """Convenience function for calculating all Greeks."""
-    pricer = BlackScholesPricer()
+    pricer = BlackScholesModel()
     return pricer.all_greeks(S, K, T, r, sigma, option_type)
 
 
@@ -348,7 +348,7 @@ if __name__ == "__main__":
     r = 0.05   # Risk-free rate (5%)
     sigma = 0.2  # Volatility (20%)
     
-    pricer = BlackScholesPricer()
+    pricer = BlackScholesModel()
     
     # Price call and put options
     call_price = pricer.price_call(S, K, T, r, sigma)

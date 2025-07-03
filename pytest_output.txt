@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0
+rootdir: /Users/arthurriche/Desktop/advanced-option-pricer
+plugins: anyio-4.9.0, html-4.0.2, metadata-3.1.1, langsmith-0.4.1, ordering-0.6, rerunfailures-15.0, seleniumbase-4.37.2, xdist-3.6.1
+collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_models.py _____________________
+ImportError while importing test module '/Users/arthurriche/Desktop/advanced-option-pricer/tests/test_models.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/miniconda3/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_models.py:12: in <module>
+    from src.models.black_scholes import BlackScholesPricer
+E   ModuleNotFoundError: No module named 'src'
+=========================== short test summary info ============================
+ERROR tests/test_models.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.11s ===============================
